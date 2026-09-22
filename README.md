@@ -1,16 +1,102 @@
-# React + Vite
+# Movie Discovery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive movie discovery application built with React.js and the TMDB REST API. Users can search for movies, explore movies by genre, browse popular and top-rated movies, view detailed movie information, and maintain a persistent watchlist.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Search movies by title using the TMDB API
+- Browse movies by genre across 10+ genres
+- Browse popular movies
+- Browse top-rated movies
+- Load more movies using API pagination
+- View detailed information for individual movies
+- Add movies to a personal watchlist
+- Remove movies from the watchlist
+- Persist watchlist data using localStorage
+- Responsive movie grid using CSS Grid
+- Loading, error, empty, and populated states
+- Reusable React components
+- Client-side routing with React Router
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js
+- JavaScript (ES6+)
+- React Hooks
+- React Router
+- REST API
+- Fetch API
+- HTML5
+- CSS3
+- CSS Grid
+- localStorage
+- Vite
 
-## Expanding the ESLint configuration
+## API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Movie data and images are provided by [The Movie Database (TMDB)](https://www.themoviedb.org/).
+
+This product uses the TMDB API but is not endorsed or certified by TMDB.
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── GenreFilter.jsx
+│   ├── MovieCard.jsx
+│   ├── MovieGrid.jsx
+│   ├── Navbar.jsx
+│   └── SearchBar.jsx
+│
+├── pages/
+│   ├── Credits.jsx
+│   ├── Home.jsx
+│   ├── MovieDetails.jsx
+│   ├── TopRated.jsx
+│   └── Watchlist.jsx
+│
+├── services/
+│   └── movieApi.js
+│
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+```
+
+## Main Routes
+
+| Route        | Purpose                    |
+| ------------ | -------------------------- |
+| `/`          | Discover and search movies |
+| `/movie/:id` | View movie details         |
+| `/watchlist` | View saved movies          |
+| `/top-rated` | Browse top-rated movies    |
+| `/credits`   | API attribution            |
+
+## Local Setup
+
+Clone the repository and install the dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file in the project root:
+
+```env
+VITE_TMDB_API_KEY=your_tmdb_api_key
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will run locally using the Vite development server.
+
+## Note
+
+The TMDB API key is required for the application to fetch movie data. The `.env` file is excluded from version control and should not be committed to the repository.
